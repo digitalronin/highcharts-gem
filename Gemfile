@@ -6,4 +6,5 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'rb-fsevent', :require => false
   gem 'debugger'
+  gem 'gem-this'
 end

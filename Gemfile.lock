@@ -11,6 +11,7 @@ GEM
     debugger-ruby_core_source (1.2.0)
     diff-lcs (1.2.2)
     formatador (0.2.4)
+    gem-this (0.3.7)
     guard (1.7.0)
       formatador (>= 0.2.4)
       listen (>= 0.6.0)
@@ -44,6 +45,7 @@ PLATFORMS
 
 DEPENDENCIES
   debugger
+  gem-this
   guard
   guard-rspec
   rb-fsevent
