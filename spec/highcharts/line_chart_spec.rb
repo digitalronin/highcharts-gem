@@ -24,6 +24,12 @@ describe Highcharts::LineChart do
     expect(@chart.series).to eq([s_after])
   end
 
+  it "truncates data series names on initialisation" do
+    s = {name: "abcdefghijklmnopqrstuvwxyz", data: [1, 2, 3]}
+    chart = Highcharts::LineChart.new(series: [s])
+    expect(chart.series[0][:name]).to eq("abcdefghijklmnopqrstuvwxy")
+  end
+
   it "truncates data series names" do
     s_before = {name: "abcdefghijklmnopqrstuvwxyz", data: [1, 2, 3]}
     @chart.add_series s_before

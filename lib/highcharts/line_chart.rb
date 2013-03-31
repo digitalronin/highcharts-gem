@@ -6,9 +6,11 @@ class Highcharts::LineChart
   def initialize(options = {})
     dom_id  = options.delete(:renderTo)
     y_title = options.delete(:y_title)
+    series  = options.delete(:series)
     @hash = Highcharts::HashWithIndifferentContent.new(line_chart_defaults.merge(options))
     self.renderTo = dom_id if dom_id
     self.y_title  = y_title if y_title
+    self.series   = series if series
   end
 
   def to_hash
