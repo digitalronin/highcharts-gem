@@ -1,4 +1,4 @@
 require 'rspec'
 require 'debugger'
 
-require './lib/highcharts'
+require './lib/highcharts-gem'
