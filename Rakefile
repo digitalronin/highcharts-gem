@@ -18,7 +18,7 @@ task :default => ["spec"]
 spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
-  s.name              = "HighchartsGem"
+  s.name              = "highcharts-gem"
   s.version           = "0.1.0"
   s.summary           = "Simplifies generating config hashes for highcharts.js"
   s.author            = ["David Salgado", "Richard Livsey"]
