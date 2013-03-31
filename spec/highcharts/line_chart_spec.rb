@@ -5,6 +5,23 @@ describe Highcharts::LineChart do
     @chart = Highcharts::LineChart.new
   end
 
+  it "allows configuring max data label length" do
+    @chart.max_data_label_length = 10
+    s_before = {name: "abcdefghijklmnopqrstuvwxyz", data: [1, 2, 3]}
+    @chart.add_series s_before
+    # name truncated to 10 chars
+    s_after = {name: "abcdefghij", data: [1, 2, 3]}
+    expect(@chart.series).to eq([s_after])
+  end
+
+  it "truncates data series names" do
+    s_before = {name: "abcdefghijklmnopqrstuvwxyz", data: [1, 2, 3]}
+    @chart.add_series s_before
+    # name truncated to 25 chars
+    s_after = {name: "abcdefghijklmnopqrstuvwxy", data: [1, 2, 3]}
+    expect(@chart.series).to eq([s_after])
+  end
+
   it "adds a data series" do
     s1 = {name: "Series One", data: [1, 2, 3, 4]}
     s2 = {name: "Series Two", data: [2, 3, 4, 5]}

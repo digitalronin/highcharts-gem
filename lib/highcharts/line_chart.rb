@@ -1,4 +1,8 @@
 class Highcharts::LineChart
+
+  # Default value for max length of data series names
+  MAX_DATA_POINT_LABEL_CHARS = 25
+
   def initialize(options = {})
     @hash = Highcharts::HashWithIndifferentContent.new(line_chart_defaults.merge(options))
   end
@@ -32,18 +36,32 @@ class Highcharts::LineChart
   end
 
   def add_series(s)
+    truncate_series_name(s)
     @hash.series << s
   end
 
   def series=(arr)
-    @hash.series = arr
+    @hash.series = []
+    arr.map {|s| add_series(s)}
   end
 
   def series
     @hash.series
   end
 
+  def max_data_label_length=(length)
+    @max_data_label_length ||= length
+  end
+
+  def max_data_label_length
+    @max_data_label_length || MAX_DATA_POINT_LABEL_CHARS
+  end
+
   private
+
+  def truncate_series_name(s)
+    s[:name] = s[:name].slice(0, max_data_label_length)
+  end
 
   def line_chart_defaults
     {
