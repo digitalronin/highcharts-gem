@@ -91,6 +91,7 @@ class Highcharts::LineChart
         borderWidth:      1,
         backgroundColor:  'white'
       },
+      credits: { enabled: false }
     }
   end
 end
