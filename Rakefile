@@ -8,7 +8,6 @@ RSpec::Core::RakeTask.new do |t|
   t.rspec_opts = %w(--format documentation --colour)
 end
 
-
 task :default => ["spec"]
 
 # This builds the actual gem. For details of what all these options
@@ -21,10 +20,10 @@ spec = Gem::Specification.new do |s|
   # Change these as appropriate
   s.name              = "HighchartsGem"
   s.version           = "0.1.0"
-  s.summary           = "What this thing does"
-  s.author            = "David Salgado"
+  s.summary           = "Simplifies generating config hashes for highcharts.js"
+  s.author            = ["David Salgado", "Richard Livsey"]
   s.email             = "david@digitalronin.com"
-  s.homepage          = "http://yoursite.example.com"
+  s.homepage          = "https://github.com/digitalronin/highcharts-gem"
 
   s.has_rdoc          = true
   # You should probably have a README of some kind. Change the filename
@@ -33,7 +32,7 @@ spec = Gem::Specification.new do |s|
   # s.rdoc_options      = %w(--main README)
 
   # Add any extra files to include in the gem (like your README)
-  s.files             = %w(Gemfile Gemfile.lock Guardfile) + Dir.glob("{spec,lib}/**/*")
+  s.files             = %w(README.md) + Dir.glob("{spec,lib}/**/*")
   s.require_paths     = ["lib"]
 
   # If you want to depend on other gems, add them here, along with any
