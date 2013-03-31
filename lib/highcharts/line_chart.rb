@@ -31,6 +31,18 @@ class Highcharts::LineChart
     @hash.yAxis.title.text
   end
 
+  def add_series(s)
+    @hash.series << s
+  end
+
+  def series=(arr)
+    @hash.series = arr
+  end
+
+  def series
+    @hash.series
+  end
+
   private
 
   def line_chart_defaults
@@ -69,7 +81,7 @@ class Highcharts::LineChart
         }
       },
 
-      series: 'dummy_series',
+      series: [],
 
       legend: {
         layout:           'vertical',

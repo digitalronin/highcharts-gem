@@ -5,6 +5,20 @@ describe Highcharts::LineChart do
     @chart = Highcharts::LineChart.new
   end
 
+  it "adds a data series" do
+    s1 = {name: "Series One", data: [1, 2, 3, 4]}
+    s2 = {name: "Series Two", data: [2, 3, 4, 5]}
+    @chart.add_series s1
+    @chart.add_series s2
+    expect(@chart.series).to eq([s1, s2])
+  end
+
+  it "assigns series" do
+    s = {name: "Series One", data: [1, 2, 3, 4]}
+    @chart.series = [s]
+    expect(@chart.series).to eq([s])
+  end
+
   it "returns y_title" do
     @chart.y_title = 'Y Axis Title'
     expect(@chart.y_title).to eq("Y Axis Title")
@@ -74,7 +88,7 @@ describe Highcharts::LineChart do
         }
       },
 
-      series: 'dummy_series',
+      series: [],
 
       legend: {
         layout:           'vertical',
