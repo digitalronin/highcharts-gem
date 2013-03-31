@@ -5,6 +5,16 @@ describe Highcharts::LineChart do
     @chart = Highcharts::LineChart.new
   end
 
+  it "initialises with y_title" do
+    chart = Highcharts::LineChart.new(y_title: 'Y Axis Title')
+    expect(chart.to_hash[:yAxis][:title][:text]).to eq("Y Axis Title")
+  end
+
+  it "initialises with renderTo" do
+    chart = Highcharts::LineChart.new(renderTo: 'highcharts_div')
+    expect(chart.to_hash[:chart][:renderTo]).to eq('highcharts_div')
+  end
+
   it "allows configuring max data label length" do
     @chart.max_data_label_length = 10
     s_before = {name: "abcdefghijklmnopqrstuvwxyz", data: [1, 2, 3]}

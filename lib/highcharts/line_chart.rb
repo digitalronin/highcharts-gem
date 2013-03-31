@@ -4,7 +4,11 @@ class Highcharts::LineChart
   MAX_DATA_POINT_LABEL_CHARS = 25
 
   def initialize(options = {})
+    dom_id  = options.delete(:renderTo)
+    y_title = options.delete(:y_title)
     @hash = Highcharts::HashWithIndifferentContent.new(line_chart_defaults.merge(options))
+    self.renderTo = dom_id if dom_id
+    self.y_title  = y_title if y_title
   end
 
   def to_hash
