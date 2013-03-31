@@ -54,6 +54,7 @@ describe Highcharts::LineChart do
 
   it "has defaults" do
     expected = {
+      credits: { enabled: false },
       chart: {
         renderTo:     'dummy_dom_id',
         type:         'line',

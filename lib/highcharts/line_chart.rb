@@ -47,6 +47,8 @@ class Highcharts::LineChart
 
   def line_chart_defaults
     {
+      credits: { enabled: false },
+
       chart: {
         renderTo:     'dummy_dom_id',
         type:         'line',
@@ -91,7 +93,6 @@ class Highcharts::LineChart
         borderWidth:      1,
         backgroundColor:  'white'
       },
-      credits: { enabled: false }
     }
   end
 end
