@@ -43,6 +43,10 @@ After instantiation, any value can be read/altered using either the convenience 
 
         barchart.yAxis.title.text = "My New Y Axis Title"
 
+NB: You can address hash elements this way, but not nested array elements. For example, *this doesn't work*;
+
+        barchart.series[2].name = "Whatever"
+
 To render the chart, call the highcharts.js function in your page template, like this;
 
         new Highcharts.Chart(<%=raw barchart.to_json %>);
