@@ -13,6 +13,10 @@ class Highcharts::LineChart
     self.series   = series if series
   end
 
+  def to_json
+    to_hash.to_json
+  end
+
   def to_hash
     @hash.to_hash
   end

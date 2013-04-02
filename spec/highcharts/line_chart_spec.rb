@@ -5,6 +5,11 @@ describe Highcharts::LineChart do
     @chart = Highcharts::LineChart.new
   end
 
+  it "outputs to json" do
+    chart = Highcharts::LineChart.new(y_title: 'Y Axis Title')
+    expect(chart.to_json).to eq(chart.to_hash.to_json)
+  end
+
   it "initialises with y_title" do
     chart = Highcharts::LineChart.new(y_title: 'Y Axis Title')
     expect(chart.to_hash[:yAxis][:title][:text]).to eq("Y Axis Title")
