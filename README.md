@@ -43,13 +43,13 @@ After instantiation, any value can be read/altered using either the convenience 
 
         barchart.yAxis.title.text = "My New Y Axis Title"
 
-You can also add data series individually, like this;
-
-        barchart.add_series(name: "Another Series", data: [2, 3, 4, 5, 6])
-
 NB: You can address hash elements this way, but not nested array elements. For example, *this doesn't work*;
 
         barchart.series[2].name = "Whatever"  # <-- DOES NOT WORK
+
+You can also add data series individually, like this;
+
+        barchart.add_series(name: "Another Series", data: [2, 3, 4, 5, 6])
 
 To render the chart, call the highcharts.js function in your page template, like this;
 
