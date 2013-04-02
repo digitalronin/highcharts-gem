@@ -18,29 +18,30 @@ Requirements
 EXAMPLE
 -------
 
-# In your ruby code
-barchart = Highcharts::BarChart.new(
-  title:    "My Cool Chart",
-  y_title:  "Profit (Billions)",
-  renderTo: 'div_where_my_chart_will_appear'
-  series:   [
-              {name: "Me", data:   [10, 20, 30, 40, 50]}, 
-              {name: "Them", data: [1, 2, 3, 4, 5]}
-            ]
-)
+In your ruby code
 
-# After instantiation, any value can be altered using either the convenience methods;
+          barchart = Highcharts::BarChart.new(
+            title:    "My Cool Chart",
+            y_title:  "Profit (Billions)",
+            renderTo: 'div_where_my_chart_will_appear'
+            series:   [
+                        {name: "Me", data:   [10, 20, 30, 40, 50]}, 
+                        {name: "Them", data: [1, 2, 3, 4, 5]}
+                      ]
+          )
+
+After instantiation, any value can be altered using either the convenience methods;
 
 * title
 * y_title
 * renderTo
 * series
 
-# ...or by using addressing the nested hash attributes directly;
+...or by using addressing the nested hash attributes directly;
 
-barchart.yAxis.title.text = "My New Y Axis Title"
+        barchart.yAxis.title.text = "My New Y Axis Title"
 
-# To render the chart, call the highcharts.js function in your page template, like this;
+To render the chart, call the highcharts.js function in your page template, like this;
 
-new Highcharts.Chart(<%=raw barchart.to_json %>);
+        new Highcharts.Chart(<%=raw barchart.to_json %>);
 
