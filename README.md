@@ -45,7 +45,7 @@ After instantiation, any value can be read/altered using either the convenience 
 
 NB: You can address hash elements this way, but not nested array elements. For example, *this doesn't work*;
 
-        barchart.series[2].name = "Whatever"
+        barchart.series[2].name = "Whatever"  # <-- DOES NOT WORK
 
 To render the chart, call the highcharts.js function in your page template, like this;
 
