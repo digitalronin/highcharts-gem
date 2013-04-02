@@ -2,13 +2,13 @@
 
 Gem::Specification.new do |s|
   s.name = "highcharts-gem"
-  s.version = "0.1.6"
+  s.version = "0.1.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Salgado", "Richard Livsey"]
   s.date = "2013-04-02"
   s.email = "david@digitalronin.com"
-  s.files = ["README.md", "spec/highcharts", "spec/highcharts/hash_with_indifferent_content_spec.rb", "spec/highcharts/line_chart_spec.rb", "spec/spec_helper.rb", "lib/highcharts", "lib/highcharts/bar_chart.rb", "lib/highcharts/chart.rb", "lib/highcharts/hash_with_indifferent_content.rb", "lib/highcharts/line_chart.rb", "lib/highcharts-gem.rb"]
+  s.files = ["README.md", "spec/highcharts", "spec/highcharts/bar_chart_spec.rb", "spec/highcharts/hash_with_indifferent_content_spec.rb", "spec/highcharts/line_chart_spec.rb", "spec/spec_helper.rb", "lib/highcharts", "lib/highcharts/bar_chart.rb", "lib/highcharts/chart.rb", "lib/highcharts/hash_with_indifferent_content.rb", "lib/highcharts/line_chart.rb", "lib/highcharts-gem.rb"]
   s.homepage = "https://github.com/digitalronin/highcharts-gem"
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.24"
