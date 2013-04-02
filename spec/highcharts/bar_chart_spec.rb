@@ -5,6 +5,11 @@ describe Highcharts::BarChart do
     @chart = Highcharts::BarChart.new
   end
 
+  it "sets chart height" do
+    @chart.chart.height = 800
+    expect(@chart.to_hash[:chart][:height]).to eq(800)
+  end
+
   it "has defaults" do
     expected = {
       credits: { enabled: false},

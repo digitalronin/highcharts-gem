@@ -68,6 +68,10 @@ module Highcharts
       @max_data_label_length || MAX_DATA_POINT_LABEL_CHARS
     end
 
+    def method_missing(method, *args)
+      @hash.send(method, args)
+    end
+
     protected
 
     def truncate_series_name(s)
