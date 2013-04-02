@@ -14,5 +14,6 @@ module Highcharts
       hash.legend = {enabled: false}
 
       hash
+    end
   end
 end
