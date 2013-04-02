@@ -4,6 +4,21 @@ module Highcharts
     # Default value for max length of data series names
     MAX_DATA_POINT_LABEL_CHARS = 25
 
+    # * *Args*   :
+    #   - +options+ -> An optional hash of configuration options:
+    # {
+    #   renderTo:  [string: the ID of the element in the page where the chart will be rendered],
+    #   title:     [string: Title of the chart],
+    #   y_title:   [string: Title of the Y axis]
+    #   series:    [array of data series hashes;
+    #                [
+    #                  {name: [series name], data: [value1, value2, ...]},
+    #                  ...
+    #                ]
+    # }
+    #
+    # NB: Any of these values may be changed after initialisation.
+    #
     def initialize(options = {})
       dom_id        = options.delete(:renderTo)
       title         = options.delete(:title)

@@ -10,6 +10,11 @@ describe Highcharts::LineChart do
     expect(chart.to_json).to eq(chart.to_hash.to_json)
   end
 
+  it "initialises with title" do
+    chart = Highcharts::LineChart.new(title: 'My Chart Title')
+    expect(chart.to_hash[:title]).to eq("My Chart Title")
+  end
+
   it "initialises with y_title" do
     chart = Highcharts::LineChart.new(y_title: 'Y Axis Title')
     expect(chart.to_hash[:yAxis][:title][:text]).to eq("Y Axis Title")
@@ -57,9 +62,19 @@ describe Highcharts::LineChart do
     expect(@chart.series).to eq([s])
   end
 
+  it "returns title" do
+    @chart.title = 'My Chart Title'
+    expect(@chart.title).to eq("My Chart Title")
+  end
+
   it "returns y_title" do
     @chart.y_title = 'Y Axis Title'
     expect(@chart.y_title).to eq("Y Axis Title")
+  end
+
+  it "overwrites title" do
+    @chart.title = 'My Chart Title'
+    expect(@chart.to_hash[:title]).to eq("My Chart Title")
   end
 
   it "overwrites y_title" do
