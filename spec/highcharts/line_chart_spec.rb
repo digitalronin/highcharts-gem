@@ -94,7 +94,6 @@ describe Highcharts::LineChart do
     expected = {
       credits: { enabled: false },
       chart: {
-        renderTo:     'dummy_dom_id',
         type:         'line',
         zoomType:     'x',
         marginRight:  240

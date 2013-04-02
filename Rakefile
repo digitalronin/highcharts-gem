@@ -5,7 +5,7 @@ require "rdoc/task"
 require "rspec"
 require "rspec/core/rake_task"
 RSpec::Core::RakeTask.new do |t|
-  t.rspec_opts = %w(--format documentation --colour)
+  t.rspec_opts = %w()
 end
 
 task :default => ["spec"]
@@ -19,7 +19,7 @@ spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
   s.name              = "highcharts-gem"
-  s.version           = "0.1.3"
+  s.version           = "0.1.4"
   s.summary           = "Simplifies generating config hashes for highcharts.js"
   s.author            = ["David Salgado", "Richard Livsey"]
   s.email             = "david@digitalronin.com"
