@@ -30,14 +30,16 @@ In your ruby code
                       ]
           )
 
-After instantiation, any value can be altered using either the convenience methods;
+After instantiation, any value can be read/altered using either the convenience methods;
 
 * title
 * y_title
 * renderTo
 * series
 
-...or by using addressing the nested hash attributes directly;
+...or by using addressing the nested hash attributes directly. e.g. the following lines have the same effect;
+
+        barchart.y_title = "My New Y Axis Title"
 
         barchart.yAxis.title.text = "My New Y Axis Title"
 
