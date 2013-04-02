@@ -5,6 +5,11 @@ describe Highcharts::BarChart do
     @chart = Highcharts::BarChart.new
   end
 
+  it "takes passed-in title" do
+    barchart = Highcharts::BarChart.new title: 'My Title'
+    expect(barchart.to_hash[:title]).to eq('My Title')
+  end
+
   it "sets chart height" do
     @chart.chart.height = 800
     expect(@chart.to_hash[:chart][:height]).to eq(800)

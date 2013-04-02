@@ -19,7 +19,7 @@ spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
   s.name              = "highcharts-gem"
-  s.version           = "0.1.8"
+  s.version           = "0.1.9"
   s.summary           = "Simplifies generating config hashes for highcharts.js"
   s.author            = ["David Salgado", "Richard Livsey"]
   s.email             = "david@digitalronin.com"

@@ -5,12 +5,14 @@ module Highcharts
     MAX_DATA_POINT_LABEL_CHARS = 25
 
     def initialize(options = {})
-      dom_id  = options.delete(:renderTo)
-      y_title = options.delete(:y_title)
-      series  = options.delete(:series)
-      @hash   = chart_defaults
+      dom_id        = options.delete(:renderTo)
+      title         = options.delete(:title)
+      y_title       = options.delete(:y_title)
+      series        = options.delete(:series)
+      @hash = chart_defaults
       self.renderTo = dom_id if dom_id
       self.y_title  = y_title if y_title
+      self.title    = title if title
       self.series   = series if series
     end
 
